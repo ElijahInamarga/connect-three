@@ -1,0 +1,20 @@
+# ninja log v6
+3	217	7466966458397579	build.ninja	9b15f68aa05fca6b
+280	346	7467062502338335	connect_three.exe	fb241c1f6dadd05c
+8	280	7467062499617262	CMakeFiles/connect_three.dir/Inamarga_Elijah.cpp.obj	e6537d99c572e316
+8	272	7467063948291266	CMakeFiles/connect_three.dir/Inamarga_Elijah.cpp.obj	e6537d99c572e316
+272	333	7467063950937738	connect_three.exe	fb241c1f6dadd05c
+7	285	7467068397871035	CMakeFiles/connect_three.dir/Inamarga_Elijah.cpp.obj	e6537d99c572e316
+285	352	7467068400647509	connect_three.exe	fb241c1f6dadd05c
+4	261	7467069027372651	CMakeFiles/connect_three.dir/Inamarga_Elijah.cpp.obj	e6537d99c572e316
+263	326	7467069029973504	connect_three.exe	fb241c1f6dadd05c
+7	281	7467069956720751	CMakeFiles/connect_three.dir/Inamarga_Elijah.cpp.obj	e6537d99c572e316
+282	351	7467069959463905	connect_three.exe	fb241c1f6dadd05c
+3	282	7467070524765059	CMakeFiles/connect_three.dir/Inamarga_Elijah.cpp.obj	e6537d99c572e316
+282	355	7467070527557401	connect_three.exe	fb241c1f6dadd05c
+7	303	7467070749949710	CMakeFiles/connect_three.dir/Inamarga_Elijah.cpp.obj	e6537d99c572e316
+303	366	7467070752901183	connect_three.exe	fb241c1f6dadd05c
+8	281	7467071137550988	CMakeFiles/connect_three.dir/Inamarga_Elijah.cpp.obj	e6537d99c572e316
+282	351	7467071140292201	connect_three.exe	fb241c1f6dadd05c
+3	294	7467073290594915	CMakeFiles/connect_three.dir/Inamarga_Elijah.cpp.obj	e6537d99c572e316
+294	370	7467073293501038	connect_three.exe	fb241c1f6dadd05c
