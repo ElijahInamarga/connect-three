@@ -146,7 +146,7 @@ int main() {
         while (!(cin >> playerXPos) || !game.checkMove(playerXPos)) {
             cin.clear();
             cin.ignore(1000, '\n');
-            cout << "Invalid input. Try again. " << endl;
+            cout << "Invalid position! Try again:";
         }
 
         game.modifyGameBoard('X', playerXPos);
@@ -167,7 +167,7 @@ int main() {
         while (!(cin >> playerOPos) || !game.checkMove(playerOPos)) {
             cin.clear();
             cin.ignore(1000, '\n');
-            cout << "Invalid input. Try again. " << endl;
+            cout << "Invalid position! Try again:";
         }
 
         if(game.checkDraw()) {
