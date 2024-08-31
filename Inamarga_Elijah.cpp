@@ -130,13 +130,13 @@ public:
 
 int main() {
     ConnectThree game;
-    bool isGameOn = true;
+    bool GameOn = true;
 
     cout << "Connect 3:" << endl;
     game.printGameBoard();
     cout << endl;
 
-    while(isGameOn) {
+    while(GameOn) {
 
         // Player position inputs
         int playerXPos;
