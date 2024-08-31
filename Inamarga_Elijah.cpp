@@ -170,11 +170,6 @@ int main() {
             cout << "Invalid position! Try again:";
         }
 
-        if(game.checkDraw()) {
-            cout << "Game is a draw!";
-            break;
-        }
-
         game.modifyGameBoard('O', playerOPos);
         game.printGameBoard();
         cout << endl;
