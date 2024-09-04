@@ -4,10 +4,19 @@
 using namespace std;
 
 class ConnectThree {
+private:
+    char firstPlayer, secondPlayer;
 public:
     /* Constructor*/
-    ConnectThree() {
+    ConnectThree(char firstPlayer) {
         /* Initialize defaults here */
+        this->firstPlayer = firstPlayer;
+
+        if(this->firstPlayer == 'X') {
+            this->secondPlayer = 'O';
+        } else {
+            this->secondPlayer = 'X';
+        }
     }
 
     /* This is your game board*/
@@ -122,67 +131,78 @@ public:
     void modifyGameBoard(char player, int position) {
         /* Write code to modify the game board here */
         int row = turnIntoRow(position);
-        int column = turnIntoColumn((position));
+        int column = turnIntoColumn(position);
 
         gameBoard[row][column] = player;
+    }
+
+    void start() {
+        printGameBoard();
+        cout << endl;
+
+        while(true) {
+
+            // Player position inputs
+            int player1Pos;
+            int player2Pos;
+
+            std::cout << "Player " << firstPlayer <<" enter position:";
+            while (!(cin >> player1Pos) || !checkMove(player1Pos)) {
+                cin.clear();
+                cin.ignore(1000, '\n');
+                cout << "Invalid position! Try again:";
+            }
+
+            modifyGameBoard(firstPlayer, player1Pos);
+            printGameBoard();
+            cout << endl;
+
+            if(checkWin()) {
+                cout << "Player " << firstPlayer << " Wins!!!";
+                break;
+            }
+
+            if(checkDraw()) {
+                cout << "Game is a draw!";
+                break;
+            }
+
+            std::cout << "Player " << secondPlayer <<" enter position:";
+            while (!(cin >> player2Pos) || !checkMove(player2Pos)) {
+                cin.clear();
+                cin.ignore(1000, '\n');
+                cout << "Invalid position! Try again:";
+            }
+
+            modifyGameBoard(secondPlayer, player2Pos);
+            printGameBoard();
+            cout << endl;
+
+            if(checkWin()) {
+                cout << "Player " << secondPlayer << " Wins!!!";
+                break;
+            }
+
+            if(checkDraw()) {
+                cout << "Game is a draw!";
+                break;
+            }
+        }
     }
 };
 
 int main() {
-    ConnectThree game;
-    bool GameOn = true;
-
+    // Player 1 chooses what to play as ('X' or 'O')
+    char firstPlayer;
     cout << "Connect 3:" << endl;
-    game.printGameBoard();
-    cout << endl;
-
-    while(GameOn) {
-
-        // Player position inputs
-        int playerXPos;
-        int playerOPos;
-
-        std::cout << "Player X enter position:";
-        while (!(cin >> playerXPos) || !game.checkMove(playerXPos)) {
-            cin.clear();
-            cin.ignore(1000, '\n');
-            cout << "Invalid position! Try again:";
-        }
-
-        game.modifyGameBoard('X', playerXPos);
-        game.printGameBoard();
-        cout << endl;
-
-        if(game.checkWin()) {
-            cout << "Player X Wins!!!";
-            break;
-        }
-
-        if(game.checkDraw()) {
-            cout << "Game is a draw!";
-            break;
-        }
-
-        std::cout << "Player O enter position:";
-        while (!(cin >> playerOPos) || !game.checkMove(playerOPos)) {
-            cin.clear();
-            cin.ignore(1000, '\n');
-            cout << "Invalid position! Try again:";
-        }
-
-        game.modifyGameBoard('O', playerOPos);
-        game.printGameBoard();
-        cout << endl;
-
-        if(game.checkWin()) {
-            cout << "Player O Wins!!!";
-            break;
-        }
-
-        if(game.checkDraw()) {
-            cout << "Game is a draw!";
-            break;
-        }
+    cout << "What would you like to play as? (X or O)" << endl;
+    cin >> firstPlayer;
+    while(firstPlayer != 'X' && firstPlayer != 'O') {
+        cout << "Choose between 'X' or 'O'. Try again:" << endl;
+        cin >> firstPlayer;
     }
+
+    ConnectThree game(firstPlayer);
+    game.start();
 }
 
